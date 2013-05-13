@@ -14,13 +14,13 @@ public class AssumeTest {
 
 	@Test
 	public void testAssumeOne() {
-		assumeThat("みかんりんごすいか".substring(3, 6), is("いちご"));
-		System.err.println("testAssumeOne() の、assumeThatは成功しました。");
+		assumeThat("apple", is("orange"));
+		System.err.println("testAssumeOne is success");
 	}
 
 	@Test
 	public void testAssumeTwo() {
-		assumeThat("みかんりんごすいか".substring(3, 6), is("りんご"));
-		System.err.println("testAssumeTwo() assumeThat成功");
+		assumeThat("apple", is("apple"));
+		System.err.println("testAssumeTwo is success");
 	}
 }
