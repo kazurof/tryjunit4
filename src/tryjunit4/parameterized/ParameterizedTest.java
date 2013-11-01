@@ -18,13 +18,13 @@ public class ParameterizedTest {
 	public static void main(String[] args) {
 		JUnitCore.main(ParameterizedTest.class.getName());
 	}
+
 	@Rule
 	public TestName name = new TestName();
 
-	@Parameters(name = "{index}:abs{0} 日本語どうですか {1}")
+	@Parameters(name = "添字{index}:  最初のパラメータ{0} ２個めのパラメータ {1}")
 	public static List<Object[]> data() {
-		return Arrays.asList(new Object[][] { { 0, 0 }, { 1, 1 }, { -2, 2 },
-				{ 3, 3 }, { 4, 4 }, { -5, 5 }, { 6, 6 } });
+		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 }, { 4, 5 }, { 6, 7 } });
 	}
 
 	private int fInput;
@@ -34,23 +34,19 @@ public class ParameterizedTest {
 	public ParameterizedTest(int input, int expected) {
 		fInput = input;
 		fExpected = expected;
+		System.out.printf("コンストラクタが呼ばれました。 input ->  %d ,expected ->  %d %n", input, expected);
 	}
 
 	@Test
 	public void testNormal() {
-		System.out.println("this is normal test.にほんご");
+		System.out.printf("testMethodname ->%s<- %n", name.getMethodName());
 	}
 
 	@Test
 	public void test() {
-		assertEquals(fExpected, abs(fInput));
-		System.out.println("name.getMethodName() "+name.getMethodName());
-		System.out.println("name.getMethodName() "+name.getMethodName());
+		System.out.printf("testMethodname  ->%s<-  input ->  %d ,expected ->  %d %n", name.getMethodName() , fInput, fExpected);
 	}
 
-	static int abs(int target) {
-		System.out.println("ParameterizedTest#abs() called by " + target);
-		return Math.abs(target);
-	}
+
 
 }
