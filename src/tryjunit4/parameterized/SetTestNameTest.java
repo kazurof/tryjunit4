@@ -21,7 +21,7 @@ public class SetTestNameTest {
 
 	@Parameters(name = "添字{index}:  最初のパラメータ{0} ２個めのパラメータ {1}")
 	public static Iterable<Object[]> data() {
-		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 }});
+		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 } });
 	}
 
 	private int fInput;
@@ -31,7 +31,6 @@ public class SetTestNameTest {
 	public SetTestNameTest(int input, int expected) {
 		fInput = input;
 		fExpected = expected;
-		System.out.printf("I am constructor.  input ->  %d ,expected ->  %d %n", input, expected);
 	}
 
 	@Test

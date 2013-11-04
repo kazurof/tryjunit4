@@ -20,7 +20,7 @@ public class NoConstuctor {
 	@Rule
 	public TestName name = new TestName();
 
-	@Parameters(name = "添字{index}:  最初のパラメータ{0} ２個めのパラメータ {1}")
+	@Parameters
 	public static Iterable<Object[]> data() {
 		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 } });
 	}

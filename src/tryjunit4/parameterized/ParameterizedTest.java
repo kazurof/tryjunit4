@@ -31,11 +31,11 @@ public class ParameterizedTest {
 
 	@Test
 	public void testNantoka() {
-		System.out.printf("I am testNantoka.  input ->  %d ,expected ->  %d %n", fInput, fExpected);
+		System.out.printf("I am testNantoka.  fInput ->  %d ,fExpected ->  %d %n%n", fInput, fExpected);
 	}
 
 	@Test
 	public void testKantoka() {
-		System.out.printf("I am testNantoka.  input ->  %d ,expected ->  %d %n", fInput, fExpected);
+		System.out.printf("I am testNantoka.  fInput ->  %d ,fExpected ->  %d %n%n", fInput, fExpected);
 	}
 }
