@@ -1,5 +1,4 @@
 package tryjunit4.parameterized;
-import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
@@ -22,9 +21,8 @@ public class NoConstuctor {
 	public TestName name = new TestName();
 
 	@Parameters(name = "添字{index}:  最初のパラメータ{0} ２個めのパラメータ {1}")
-	// @Parameters
 	public static Iterable<Object[]> data() {
-		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 }, { 4, 5 }, { 6, 7 } });
+		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 } });
 	}
 
 	@Parameter
@@ -35,13 +33,12 @@ public class NoConstuctor {
 
 	@Test
 	public void testNantoka() {
-		System.out.printf("testMethodname ->%s<- %n", name.getMethodName());
+		System.out.printf("MethodName %s %n", name.getMethodName());
 	}
 
 	@Test
 	public void testKantoka() {
-		assertEquals(fExpected , fInput + 1);
-		System.out.printf("testMethodname  ->%s<-  input ->  %d ,expected ->  %d %n", name.getMethodName(), fInput, fExpected);
+		System.out.printf("MethodName %s %n", name.getMethodName());
 	}
 
 }

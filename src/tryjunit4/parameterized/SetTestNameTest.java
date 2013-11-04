@@ -2,28 +2,33 @@ package tryjunit4.parameterized;
 
 import java.util.Arrays;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
-public class ParameterizedTest {
+public class SetTestNameTest {
 	public static void main(String[] args) {
-		JUnitCore.main(ParameterizedTest.class.getName());
+		JUnitCore.main(SetTestNameTest.class.getName());
 	}
 
-	@Parameters
+	@Rule
+	public TestName name = new TestName();
+
+	@Parameters(name = "添字{index}:  最初のパラメータ{0} ２個めのパラメータ {1}")
 	public static Iterable<Object[]> data() {
-		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 }, { 4, 5 } });
+		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 }});
 	}
 
 	private int fInput;
 
 	private int fExpected;
 
-	public ParameterizedTest(int input, int expected) {
+	public SetTestNameTest(int input, int expected) {
 		fInput = input;
 		fExpected = expected;
 		System.out.printf("I am constructor.  input ->  %d ,expected ->  %d %n", input, expected);
@@ -31,11 +36,11 @@ public class ParameterizedTest {
 
 	@Test
 	public void testNantoka() {
-		System.out.printf("I am testNantoka.  input ->  %d ,expected ->  %d %n", fInput, fExpected);
+		System.out.printf("MethodName %s %n", name.getMethodName());
 	}
 
 	@Test
 	public void testKantoka() {
-		System.out.printf("I am testNantoka.  input ->  %d ,expected ->  %d %n", fInput, fExpected);
+		System.out.printf("MethodName %s %n", name.getMethodName());
 	}
 }
