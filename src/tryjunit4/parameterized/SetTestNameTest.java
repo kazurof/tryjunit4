@@ -8,6 +8,7 @@ import org.junit.rules.TestName;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
@@ -24,14 +25,11 @@ public class SetTestNameTest {
 		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 } });
 	}
 
-	private int fInput;
-
-	private int fExpected;
-
-	public SetTestNameTest(int input, int expected) {
-		fInput = input;
-		fExpected = expected;
-	}
+	@Parameter
+	// first data value (0) is default
+	public int fInput;
+	@Parameter(value = 1)
+	public int fExpected;
 
 	@Test
 	public void testNantoka() {
