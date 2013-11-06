@@ -12,9 +12,9 @@ import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
-public class NoConstuctor {
+public class NoConstuctorTest {
 	public static void main(String[] args) {
-		JUnitCore.main(NoConstuctor.class.getName());
+		JUnitCore.main(NoConstuctorTest.class.getName());
 	}
 
 	@Rule
