@@ -36,9 +36,4 @@ public class NoConstuctor {
 		System.out.printf("MethodName %s %n", name.getMethodName());
 	}
 
-	@Test
-	public void testKantoka() {
-		System.out.printf("MethodName %s %n", name.getMethodName());
-	}
-
 }

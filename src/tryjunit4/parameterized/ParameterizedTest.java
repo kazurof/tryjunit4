@@ -1,5 +1,6 @@
 package tryjunit4.parameterized;
 
+import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 
 import org.junit.Test;
@@ -16,7 +17,7 @@ public class ParameterizedTest {
 
 	@Parameters
 	public static Iterable<Object[]> data() {
-		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 }, { 4, 5 } });
+		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 }, { 4, 5 }, { 6, 7 } });
 	}
 
 	private int fInput;
@@ -32,10 +33,8 @@ public class ParameterizedTest {
 	@Test
 	public void testNantoka() {
 		System.out.printf("I am testNantoka.  fInput ->  %d ,fExpected ->  %d %n%n", fInput, fExpected);
+		int actual = fInput + 1;
+		assertEquals(fExpected, actual);
 	}
 
-	@Test
-	public void testKantoka() {
-		System.out.printf("I am testNantoka.  fInput ->  %d ,fExpected ->  %d %n%n", fInput, fExpected);
-	}
 }
