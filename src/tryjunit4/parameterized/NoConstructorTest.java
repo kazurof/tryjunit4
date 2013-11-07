@@ -1,5 +1,7 @@
 package tryjunit4.parameterized;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Arrays;
 
 import org.junit.Rule;
@@ -22,7 +24,7 @@ public class NoConstuctorTest {
 
 	@Parameters
 	public static Iterable<Object[]> data() {
-		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 } });
+		return Arrays.asList(new Object[][] { { 1, 1 }, { -2, 2 } });
 	}
 
 	@Parameter
@@ -34,6 +36,7 @@ public class NoConstuctorTest {
 	@Test
 	public void testNantoka() {
 		System.out.printf("MethodName %s %n", name.getMethodName());
+		assertEquals(fExpected, Math.abs(fInput));
 	}
-
 }
+
