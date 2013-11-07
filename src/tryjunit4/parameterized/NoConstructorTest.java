@@ -14,9 +14,9 @@ import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
-public class NoConstuctorTest {
+public class NoConstructorTest {
 	public static void main(String[] args) {
-		JUnitCore.main(NoConstuctorTest.class.getName());
+		JUnitCore.main(NoConstructorTest.class.getName());
 	}
 
 	@Rule
@@ -28,14 +28,13 @@ public class NoConstuctorTest {
 	}
 
 	@Parameter
-	// first data value (0) is default
 	public int fInput;
-	@Parameter(value = 1)
+	@Parameter(1) // need specify test data array index if it is not 0.
 	public int fExpected;
 
 	@Test
 	public void testNantoka() {
-		System.out.printf("MethodName %s %n", name.getMethodName());
+		System.out.printf("MethodName --%s-- %n", name.getMethodName());
 		assertEquals(fExpected, Math.abs(fInput));
 	}
 }

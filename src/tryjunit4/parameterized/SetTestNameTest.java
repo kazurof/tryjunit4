@@ -1,5 +1,7 @@
 package tryjunit4.parameterized;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Arrays;
 
 import org.junit.Rule;
@@ -22,22 +24,23 @@ public class SetTestNameTest {
 
 	@Parameters(name = "添字{index}:  最初のパラメータ{0} ２個めのパラメータ {1}")
 	public static Iterable<Object[]> data() {
-		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 } });
+		return Arrays.asList(new Object[][] { { 1, 1 }, { -2, 2 } });
 	}
 
 	@Parameter
-	// first data value (0) is default
 	public int fInput;
-	@Parameter(value = 1)
+	@Parameter(1) // need specify test data array index if it is not 0.
 	public int fExpected;
 
 	@Test
 	public void testNantoka() {
-		System.out.printf("MethodName %s %n", name.getMethodName());
+		System.out.printf("MethodName --%s-- %n", name.getMethodName());
+		assertEquals(fExpected, Math.abs(fInput));
 	}
 
 	@Test
 	public void testKantoka() {
-		System.out.printf("MethodName %s %n", name.getMethodName());
+		System.out.printf("MethodName --%s-- %n", name.getMethodName());
+		assertEquals(fExpected, (int) Math.sqrt(fInput * fInput));
 	}
 }

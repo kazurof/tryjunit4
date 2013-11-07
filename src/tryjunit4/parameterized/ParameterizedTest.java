@@ -17,7 +17,7 @@ public class ParameterizedTest {
 
 	@Parameters
 	public static Iterable<Object[]> data() {
-		return Arrays.asList(new Object[][] { { 0, 1 }, { 2, 3 }, { 4, 5 }, { 6, 7 } });
+		return Arrays.asList(new Object[][] { { 1, 1 }, { -2, 2 }, { 3, 3 }, { -4, 4 } });
 	}
 
 	private int fInput;
@@ -25,16 +25,15 @@ public class ParameterizedTest {
 	private int fExpected;
 
 	public ParameterizedTest(int input, int expected) {
+		System.out.printf("I am constructor.  input ->  %d ,expected ->  %d %n", input, expected);
 		fInput = input;
 		fExpected = expected;
-		System.out.printf("I am constructor.  input ->  %d ,expected ->  %d %n", input, expected);
 	}
 
 	@Test
 	public void testNantoka() {
 		System.out.printf("I am testNantoka.  fInput ->  %d ,fExpected ->  %d %n%n", fInput, fExpected);
-		int actual = fInput + 1;
-		assertEquals(fExpected, actual);
+		assertEquals(fExpected, Math.abs(fInput));
 	}
 
 }
