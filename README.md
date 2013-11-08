@@ -7,6 +7,7 @@ JUnit4をやってみよう ソース置き場
 
 * [http://www7b.biglobe.ne.jp/~archer/tryjunit4/tryjunit4.html](http://www7b.biglobe.ne.jp/~archer/tryjunit4/tryjunit4.html)
 * [http://www7b.biglobe.ne.jp/~archer/tryjunit4/tryjunit4Rules.html](http://www7b.biglobe.ne.jp/~archer/tryjunit4/tryjunit4Rules.html)
+* [http://www7b.biglobe.ne.jp/~archer/tryjunit4/tryjunit4More.html](http://www7b.biglobe.ne.jp/~archer/tryjunit4/tryjunit4More.html)
 
 
 
