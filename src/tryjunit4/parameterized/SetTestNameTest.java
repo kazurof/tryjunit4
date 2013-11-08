@@ -24,12 +24,13 @@ public class SetTestNameTest {
 
 	@Parameters(name = "添字{index}:  最初のパラメータ{0} ２個めのパラメータ {1}")
 	public static Iterable<Object[]> data() {
-		return Arrays.asList(new Object[][] { { 1, 1 }, { -2, 2 } });
+		return Arrays.asList(new Object[][] { { 1, 1 }, { -2, 2 }, { 3, 3 } });
 	}
 
 	@Parameter
 	public int fInput;
-	@Parameter(1) // need specify test data array index if it is not 0.
+	@Parameter(1)
+	// need specify test data array index if it is not 0.
 	public int fExpected;
 
 	@Test
